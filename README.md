@@ -57,9 +57,9 @@ Email: yubraotieno@gmail.com
 
 WhatsApp: +254 748928735
 
-LinkedIn: [Brian] (https://www.linkedin.com/in/yubra-otieno-945186343/)
+LinkedIn: [Brian](https://www.linkedin.com/in/yubra-otieno-945186343/)
 
-Twitter: [@Yubrafx] (https://x.com/YubraFx)
+Twitter: [@Yubrafx](https://x.com/YubraFx)
 
 ## 🌐 Live Site
 
