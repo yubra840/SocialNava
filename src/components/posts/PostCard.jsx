@@ -112,7 +112,7 @@ export default function PostCard({ post, currentUser, onPostUpdated }) {
   // ------------------------------------------------------------
   const requireLogin = () => {
     if (!currentUser) {
-      window.location.href = "/login";
+      navigate(`/login?redirect=/`);
       return false;
     }
     return true;
