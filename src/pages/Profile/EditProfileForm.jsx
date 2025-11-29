@@ -65,6 +65,7 @@ export default function EditProfileForm({ userData, onCancel, onUpdate }) {
   };
 
   const handleSave = async () => {
+
     try {
       setSaving(true);
 
@@ -100,7 +101,7 @@ export default function EditProfileForm({ userData, onCancel, onUpdate }) {
           { username }
         );
       }
-onUpdate(updatedData);
+    onUpdate(updatedData);
 navigate(`/profile/${username}`);
 navigate(0); // Refresh the page to reflect changes
     } catch (err) {
