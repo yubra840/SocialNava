@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Button, Avatar, TextField, CircularProgress } from "@mui/material";
 import { databases, storage, account } from "../../appwrite/config";
 import { Query, ID } from "appwrite";
+import { useNavigate } from "react-router-dom";
+
 
 import "./ProfilePage.css";
 
@@ -13,6 +15,7 @@ export default function EditProfileForm({ userData, onCancel, onUpdate }) {
   const [profilePicUrl, setProfilePicUrl] = useState("");
   const [profilePicId, setProfilePicId] = useState(userData.profilePic);
   const [newProfileSelected, setNewProfileSelected] = useState(false);
+  const navigate = useNavigate();
 
   // Generate profile picture preview URL
   useEffect(() => {
@@ -99,8 +102,7 @@ export default function EditProfileForm({ userData, onCancel, onUpdate }) {
       }
 
       onUpdate(updatedData);
-      window.history.replaceState(null, "", `/profile/${username}`);
-      window.location.reload();
+      navigate(`/profile/${username}`);
     } catch (err) {
       console.error("Error updating profile:", err);
       setSaving(false);

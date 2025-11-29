@@ -2,6 +2,8 @@
 import React from "react";
 import "./BottomNav.css";
 import { NavLink, useNavigate } from "react-router-dom";
+import { account, databases } from "../../appwrite/config";
+import { useState, useEffect } from "react";
 import {
   Home,
   PermMedia,
@@ -12,8 +14,26 @@ import {
 } from "@mui/icons-material";
 
 const BottomNav = () => {
-  const user = localStorage.getItem("currentUsername");
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
+
+   const DB_ID = import.meta.env.VITE_APPWRITE_DATABASE_ID;
+  const USERS_COL = import.meta.env.VITE_APPWRITE_USERS_COLLECTION_ID;
+   useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const currentUser = await account.get();
+        const profile = await databases.getDocument(DB_ID, USERS_COL, currentUser.$id);
+        setUser(profile);
+      } catch (err) {
+        console.error("Error fetching user:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, []);
   return (
     <nav className="bottom-nav">
       <NavLink to="/" className="nav-item">
