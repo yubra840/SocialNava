@@ -6,7 +6,7 @@ import { account } from "../../appwrite/config";
 import { databases } from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import avatar from "../../assets/default-avatar.png";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.PNG";
 
 
 const Topbar = () => {

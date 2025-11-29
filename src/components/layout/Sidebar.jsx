@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { account, databases } from "../../appwrite/config";
 import avatar from "../../assets/default-avatar.png";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.PNG";
 
 
 import {
@@ -55,14 +55,7 @@ const Sidebar = () => {
   // ------------------------------------------------------------
   // Helper function to protect routes
   // ------------------------------------------------------------
-  const requireLogin = (path) => {
-    if (!user) {
-      navigate("/login", { state: { from: path } });
-    } else {
-      navigate(path);
-    }
-  };
-   
+  
   return (
     <aside className="sidebar">
       <div className="logo-container">
