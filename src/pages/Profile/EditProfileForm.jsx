@@ -100,9 +100,8 @@ export default function EditProfileForm({ userData, onCancel, onUpdate }) {
           { username }
         );
       }
-
-      onUpdate(updatedData);
-     navigate(`/profile/${username}?updated=${Date.now()}`);
+onUpdate(updatedData);
+navigate(`/profile/${username}`);
     } catch (err) {
       console.error("Error updating profile:", err);
       setSaving(false);
