@@ -1,0 +1,48 @@
+/* src/components/Conversation/ChatWindow.css */
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.chat-window .content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+/* header at top */
+.chat-window .chat-body {
+  flex: 1;
+  padding: 18px;
+  overflow-y: auto;
+  background: linear-gradient(180deg, #080808 0%, #0f0f0f 100%);
+}
+
+/* messages area when no friend selected */
+.chat-empty {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100%;
+  color:#666;
+}
+
+/* mobile overlay */
+@media (max-width: 768px) {
+  .chat-window {
+    left: 0;
+    min-width: 260px;
+    max-width: 800px;
+    background: white;
+    transform: translateX(100%);
+    transition: transform 220ms ease;
+    position: fixed;
+  }
+ .chat-window .chat-body {
+  bottom: 150px;
+}
+  .chat-window.mobile-open {
+    transform: translateX(0);
+  }
+}

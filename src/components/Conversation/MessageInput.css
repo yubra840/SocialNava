@@ -1,0 +1,47 @@
+/* src/components/Conversation/MessageInput.css */
+.message-input {
+  display:flex;
+  
+  gap:8px;
+  padding:12px;
+  border-top:1px solid #eee;
+  background:#2d2c2c;
+}
+
+.message-field {
+  flex:1;
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid #e6e6e6;
+  outline:none;
+  font-size:14px;
+}
+
+.send-btn {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:none;
+  background:#1e88e5;
+  color:#fff;
+  cursor:pointer;
+}
+
+@media (max-width: 768px) {
+  .message-input {
+    bottom: 135px; /* adjust based on topbar height */
+    position: fixed;
+
+    left: 0;
+    right: 0;
+
+    /* Make sure it is above everything else */
+    z-index: 2000;
+
+    /* Padding to blend well */
+    padding: 10px;
+  }
+}

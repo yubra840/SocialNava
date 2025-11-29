@@ -1,0 +1,74 @@
+/* src/components/layout/BottomNav.css */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #242424;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+  z-index: 100;
+}
+
+.nav-item {
+  color: #666;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.nav-item:hover {
+  transform: translateY(-2px);
+}
+.nav-item.active{
+  background: #599ee2;
+}
+
+.nav-item.active .icon {
+  transform: scale(1.2);
+  opacity: 1;
+}
+.nav-item .icon {
+  font-size: 34px;
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* --- ICON COLORS --- */
+.home-icon {
+  color: #044483; /* Blue */
+}
+
+.media-icon {
+  color: #e91e63; /* Pink */
+}
+
+.explore-icon {
+  color: #ff9800; /* Orange */
+}
+
+.people-icon {
+  color: #137d17; /* Green */
+}
+
+.saved-icon {
+  color: #9c27b0; /* Purple */
+}
+
+.creators-icon {
+  color: #03720e; /* Gold */
+}
+
+/* Responsive visibility */
+@media (min-width: 769px) {
+  .bottom-nav {
+    display: none;
+  }
+}

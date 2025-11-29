@@ -1,0 +1,44 @@
+/* src/pages/Home.css */
+.home-page {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  margin-left: 270px;
+   background: #141414;
+
+}
+
+.feed-container {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+    gap: 1rem;
+
+}
+.home-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background: black;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+
+.loading, .empty {
+  text-align: center;
+  color: #666;
+  padding: 2rem 0;
+}
+@media (max-width: 768px) {
+  .home-page {
+  margin-left: 0px;
+  margin-bottom: 50px;
+    margin-top: 79px;
+
+
+}
+}

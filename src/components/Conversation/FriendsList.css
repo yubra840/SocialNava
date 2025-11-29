@@ -1,0 +1,25 @@
+/* src/components/Conversation/FriendsList.css */
+.friends-panel {
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.friends-header {
+  font-weight:700;
+  padding:8px 10px;
+  border-bottom:1px solid #eee;
+}
+
+.friends-list {
+  padding:8px;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+@media (max-width: 768px) {
+  .friends-header {
+  border-bottom: none;
+}
+}

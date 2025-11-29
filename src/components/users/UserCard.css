@@ -1,0 +1,49 @@
+.user-card {
+  background: rgb(40, 39, 39);
+  padding: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;               /* <--- IMPORTANT */
+  align-items: center;         /* vertically aligned */
+  gap: 15px;                   /* spacing between items */
+  width: 100%;
+}
+
+.user-card:hover {
+  transform: translateY(-3px);
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  flex: 1;                     /* pushes icons to the right side */
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.unfollow-btn{
+  background: red
+}
+.follow-btn{
+  background: #1DA1F2;
+}
+.usermessage {
+  color: green;
+}
+.userunfollow {
+  color: red;
+}
+.userfollow {
+  color: green;
+}

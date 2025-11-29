@@ -1,0 +1,63 @@
+/* src/pages/Conversation/ConversationPage.css */
+.conv-page {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-left: 270px;
+  height: 100vh;
+
+}
+
+/* left is the large chat area */
+.conv-left {
+  flex: 1.6;
+  min-width: 260px;
+  max-width: 600px;
+  background: var(--bg-elevated, black);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  overflow-y: auto;
+  flex-direction: column;
+}
+
+/* right is friends list panel */
+.conv-right {
+  flex: 0.3;
+  max-width: 360px;
+  min-width: 260px;
+  background: var(--bg-panel, black);
+  border-radius: 12px;
+    padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  overflow-y: auto;
+}
+
+/* Responsive: small screens — show only friends list initially */
+@media (max-width: 768px) {
+  .conv-page {
+  margin-left: 0px;
+  margin-top: 79px;
+
+}
+  .conv-page {
+    padding: 0;
+  }
+  .conv-left {
+    display: none; /* replaced by mobile behavior inside ChatWindow */
+  }
+  .conv-right{
+    flex: 1;
+  }       
+
+   .conv-left.mobile-open {
+    flex: 1;
+    display: flex !important; /* show when ChatWindow says mobileOpen = true */
+  }
+  .conv-right.mobile-open{
+    display: none;
+
+  }
+}
+
+/* When chat is open on mobile, ChatWindow will show over everything via its own CSS */

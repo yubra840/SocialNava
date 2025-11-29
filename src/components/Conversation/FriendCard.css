@@ -1,0 +1,29 @@
+/* src/components/Conversation/FriendCard.css */
+.friend-card {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:4px 5px;
+  border-radius:8px;
+  cursor:pointer;
+  transition: background .15s ease;
+}
+
+.friend-card:hover {
+  background: #2f1ba3;
+}
+
+.friend-card.selected {
+  background: #140378;
+}
+
+.friend-thumb {
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.friend-name {
+  font-weight:600;
+}

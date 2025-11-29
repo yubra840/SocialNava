@@ -1,0 +1,38 @@
+.people-page {
+  padding-right: 20px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-left: 290px;
+  background: black;
+  border-radius: 10px;
+
+  
+  
+}
+
+.people-search {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.people-list {
+  display: grid;
+  gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: space-between; /* spreads them out evenly */
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .people-list {
+    grid-template-columns: 1fr;
+        gap: 20px;
+
+  }
+  .people-page {
+    margin-left: 0;
+    margin-top: 79px;
+  }
+}
