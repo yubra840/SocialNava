@@ -12,7 +12,7 @@ import {
 } from "@mui/icons-material";
 
 const BottomNav = () => {
-  const user = localStorage.getItem("currentUser");
+  const user = localStorage.getItem("currentUsername");
   const navigate = useNavigate();
   return (
     <nav className="bottom-nav">

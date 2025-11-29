@@ -50,7 +50,9 @@ const Topbar = () => {
       console.error("Logout error:", err);
     }
   };
-
+const navigateToProfile = () => {
+    navigate(`/profile/${user.username}`);
+  };
   return (
     <header className="topbar">
 <div className="top-logo-container">
@@ -72,9 +74,7 @@ const Topbar = () => {
               src={user?.profilePic || avatar}
               alt="Profile"
               className="top-profile"
-              onClick={() =>
-            (window.location.href = `/profile/${user?.username}`)
-            }
+              onClick={navigateToProfile}
             />
         <button className="logout-btn-top" onClick={handleLogout}>
           <Logout />

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import "./PostCard.css";
+import { useNavigate } from "react-router-dom";
 
 
 import Comments from "./Comments";
@@ -24,6 +25,7 @@ export default function PostCard({ post, currentUser, onPostUpdated }) {
   const [localPost, setLocalPost] = useState(post);
   const [showComments, setShowComments] = useState(false);
   const [profilePicUrl, setProfilePicUrl] = useState(avatar);
+  const navigate = useNavigate();
  
 
   const userId = currentUser?.$id || currentUser;
@@ -202,15 +204,16 @@ export default function PostCard({ post, currentUser, onPostUpdated }) {
   // ------------------------------------------------------------
   // JSX Component
   // ------------------------------------------------------------
+  const navigateToProfile = () => {
+    navigate(`/profile/${localPost.username}`);
+  };
   return (
     <article className="post-card">
       {/* HEADER */}
       <header className="post-header">
         <div
           className="post-user"
-          onClick={() =>
-            (window.location.href = `/profile/${localPost.userId || localPost.username}`)
-          }
+          onClick={navigateToProfile}
         >
           <img className="user-avatar" src={profilePicUrl} alt="avatar" />
 

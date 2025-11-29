@@ -54,8 +54,10 @@ const Sidebar = () => {
 
   // ------------------------------------------------------------
   // Helper function to protect routes
-  // ------------------------------------------------------------
-  
+  // -------------------const navigateToProfile = () => {
+   const navigateToProfile = () => {
+    navigate(`/profile/${user.username}`);
+  };
   return (
     <aside className="sidebar">
       <div className="logo-container">
@@ -79,9 +81,9 @@ const Sidebar = () => {
               src={user?.profilePic || avatar}
               alt="Profile"
               className="profile-pic"
-              onClick={() => (window.location.href = `/profile/${user?.username}`)}
+              onClick={navigateToProfile}
             />
-            <h2 className="username" onClick={() => (window.location.href = `/profile/${user?.username}`)}>
+            <h2 className="username" onClick={navigateToProfile}>
               @{user?.username || "User"}
             </h2>
           </>
