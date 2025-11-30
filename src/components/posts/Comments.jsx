@@ -117,7 +117,14 @@ export default function Comments({ post, onPostChange }) {
   if (!newText.trim()) return;
 
   setLoading(true);
+  const FALLBACK_PIC =
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/68f66b83001839edc7c6/files/692be606002a91a173de/view?project=68edef010024f5bbcb0f&mode=admin";
 
+// This determines the final pic to save in comments
+const finalProfilePic =
+  currentUser?.profilePic && currentUser.profilePic.trim() !== ""
+    ? currentUser.profilePic
+    : FALLBACK_PIC;
   try {
    
     // 1. Create the comment
@@ -129,7 +136,7 @@ export default function Comments({ post, onPostChange }) {
         post: post.$id,
         user: currentUser.$id,
         username: currentUsername,
-        profilePic: currentUser.profilePic,
+        profilePic: finalProfilePic,
         text: newText.trim(),
         likedBy: [],
         likes: 0,

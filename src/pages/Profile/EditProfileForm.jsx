@@ -101,6 +101,19 @@ export default function EditProfileForm({ userData, onCancel, onUpdate }) {
           { username }
         );
       }
+      const comments = await databases.listDocuments(
+        import.meta.env.VITE_APPWRITE_DATABASE_ID,
+        import.meta.env.VITE_APPWRITE_COMMENTS_COLLECTION_ID,
+        [Query.equal("username", userData.username)]
+      );
+      for (const comment of comments.documents) {
+        await databases.updateDocument(
+          import.meta.env.VITE_APPWRITE_DATABASE_ID,
+          import.meta.env.VITE_APPWRITE_COMMENTS_COLLECTION_ID,
+          comment.$id,
+          { username, profilePic: profilePicUrl }
+        );
+      }
     onUpdate(updatedData);
 navigate(`/profile/${username}`);
 navigate(0); // Refresh the page to reflect changes

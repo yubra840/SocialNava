@@ -53,15 +53,17 @@ function Signup() {
         password,
         name: username.trim(),
       });
+await account.createEmailPasswordSession(email.trim(), password);
 
       // Optional: Create profile document
       const DB = import.meta.env.VITE_APPWRITE_DATABASE_ID;
       const USERS_COL = import.meta.env.VITE_APPWRITE_USERS_COLLECTION_ID;
 
       if (DB && USERS_COL) {
-        await databases.createDocument(DB, USERS_COL, created.$id, {
+await databases.createDocument(DB, USERS_COL, created.$id, {
           username: username.trim(),
           email: email.trim(),
+          profilePic: "https://fra.cloud.appwrite.io/v1/storage/buckets/68f66b83001839edc7c6/files/692be606002a91a173de/view?project=68edef010024f5bbcb0f&mode=admin",
           createdAt: new Date().toISOString(),
         });
       }
@@ -74,6 +76,7 @@ function Signup() {
       setUsername("");
       setPassword("");
       setConfirm("");
+await account.deleteSession("current");
 
       // Redirect after short delay (e.g. 2.5 seconds)
       setTimeout(() => {

@@ -1,16 +1,15 @@
 /* src/components/Conversation/MessageInput.css */
 .message-input {
   display:flex;
-  
-  gap:8px;
-  padding:12px;
+  gap:2px;
+  padding:3px;
   border-top:1px solid #eee;
   background:#2d2c2c;
 }
 
 .message-field {
   flex:1;
-  padding:10px 12px;
+  padding:8px 8px;
   border-radius:999px;
   border:1px solid #e6e6e6;
   outline:none;
@@ -32,7 +31,7 @@
 
 @media (max-width: 768px) {
   .message-input {
-    bottom: 135px; /* adjust based on topbar height */
+    bottom: 148px; /* adjust based on topbar height */
     position: fixed;
 
     left: 0;
@@ -42,6 +41,7 @@
     z-index: 2000;
 
     /* Padding to blend well */
-    padding: 10px;
+        padding: 5px;
+
   }
 }

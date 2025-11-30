@@ -56,8 +56,12 @@ const Sidebar = () => {
   // Helper function to protect routes
   // -------------------const navigateToProfile = () => {
    const navigateToProfile = () => {
+  if (!user) {
+    navigate(`/login?redirectTo=/profile`);
+  } else {
     navigate(`/profile/${user.username}`);
-  };
+  }
+};
   return (
     <aside className="sidebar">
       <div className="logo-container">

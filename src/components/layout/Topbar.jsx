@@ -50,9 +50,13 @@ const Topbar = () => {
       console.error("Logout error:", err);
     }
   };
-const navigateToProfile = () => {
+ const navigateToProfile = () => {
+  if (!user) {
+    navigate(`/login?redirectTo=/profile`);
+  } else {
     navigate(`/profile/${user.username}`);
-  };
+  }
+};
   return (
     <header className="topbar">
 <div className="top-logo-container">

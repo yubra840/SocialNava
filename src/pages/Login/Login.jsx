@@ -58,8 +58,15 @@ const redirectTo = searchParams.get("redirectTo") || "/";
       setPassword("");
 
       // 4️⃣ Navigate after short delay
-setTimeout(() => navigate(redirectTo), 2000);
-    } catch (error) {
+setTimeout(() => {
+        if (redirectTo.startsWith("/profile")) {
+          // Always redirect with correct username
+          navigate(`/profile/${userData.name}`);
+        } else {
+          navigate(redirectTo);
+        }
+      }, 1500);
+    }catch (error) {
       console.error("Login error:", error);
 
       const friendlyMessage =

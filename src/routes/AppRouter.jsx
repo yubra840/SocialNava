@@ -32,6 +32,7 @@ const AppRouter = () => {
                   <Route index element={<ConversationPage />} />
                   <Route path=":username" element={<ConversationPage />} />
           </Route>
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/profile/:username" element={<ProfilePage />} />
 
         </Route>
