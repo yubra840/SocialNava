@@ -62,7 +62,7 @@ setTimeout(() => {
         if (redirectTo.startsWith("/profile")) {
           // Always redirect with correct username
           navigate(`/profile/${userData.name}`);
-        } else {
+        }else {
           navigate(redirectTo);
         }
       }, 1500);

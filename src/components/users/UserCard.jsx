@@ -64,13 +64,19 @@ export default function UserCard({ user, currentUser }) {
   };
 
   const sendMessage = (e) => {
+    if (!currentUser) {
+            e.preventDefault(); // stop normal navigation
+            navigate(`/login?redirectTo=/conversation/${user.username}`); // redirect to login instead
+          }else{
     e.stopPropagation();
     navigate(`/conversation/${user.username}`);
+  };
   };
 
   const navigateToProfile = () => {
     navigate(`/profile/${user.username}`);
   };
+  
 
   return (
     <div className="user-card" onClick={navigateToProfile}>
@@ -80,12 +86,7 @@ export default function UserCard({ user, currentUser }) {
       <div className="user-actions" onClick={(e) => e.stopPropagation()}>
         {/* MESSAGE BUTTON */}
         <button className="action-btn message-btn" onClick={sendMessage}>
-          <MessageIcon className="usermessage" onClick={(e) => {
-          if (!currentUser) {
-            e.preventDefault(); // stop normal navigation
-            navigate("/login?redirectTo=/people"); // redirect to login instead
-          }
-        }} />
+          <MessageIcon className="usermessage" />
         </button>
 
         {/* FOLLOW / UNFOLLOW BUTTON */}
