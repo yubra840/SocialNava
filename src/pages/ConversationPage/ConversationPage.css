@@ -28,7 +28,7 @@
   min-width: 260px;
   background: var(--bg-panel, black);
   border-radius: 12px;
-    padding: 12px;
+  padding: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.04);
   overflow-y: auto;
 }
