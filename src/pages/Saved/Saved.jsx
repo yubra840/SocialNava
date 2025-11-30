@@ -27,23 +27,26 @@ export default function Saved() {
   };
 
   // 2. Fetch posts and filter saved ones
-  const fetchSavedPosts = async (userId) => {
-    try {
-      const res = await databases.listDocuments(
-        DATABASE_ID,
-        POSTS_COLLECTION_ID,
-        [
-          Query.search("savedBy", userId), // savedBy should be an array in your collection
-        ]
-      );
+  // 2. Fetch posts and filter saved ones
+const fetchSavedPosts = async (userId) => {
+  try {
+    const res = await databases.listDocuments(
+      DATABASE_ID,
+      POSTS_COLLECTION_ID,
+      [
+        Query.search("savedBy", userId),
+        Query.orderDesc("$createdAt"), // NEW — latest posts first
+      ]
+    );
 
-      setSavedPosts(res.documents);
-    } catch (error) {
-      console.error("Error fetching saved posts:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+    setSavedPosts(res.documents);
+  } catch (error) {
+    console.error("Error fetching saved posts:", error);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   useEffect(() => {
     const fetchData = async () => {

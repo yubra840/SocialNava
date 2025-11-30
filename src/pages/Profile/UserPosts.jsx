@@ -13,13 +13,18 @@ export default function UserPosts({ userId, currentUser }) {
         const res = await databases.listDocuments(
           import.meta.env.VITE_APPWRITE_DATABASE_ID,
           import.meta.env.VITE_APPWRITE_POSTS_COLLECTION_ID,
-          [Query.equal("username", userId)]
+          [
+            Query.equal("username", userId),
+            Query.orderDesc("$createdAt"), // NEW — show latest posts first
+          ]
         );
+
         setPosts(res.documents);
       } catch (err) {
         console.error("Error fetching user posts:", err);
       }
     };
+
     fetchPosts();
   }, [userId]);
 
