@@ -135,10 +135,23 @@ const Sidebar = () => {
   <Comment className="icon creators-icon" /> <span>Messages</span>
 </NavLink>
       </nav>
+{/* If user is not logged in, show Login button */}
+{!user ? (
+  <button
+  className="login-btn"
+  onClick={() => {
+    const currentPath = window.location.pathname;
+    navigate(`/login?redirectTo=${currentPath}`);
+  }}
+>
+  Login
+</button>
+) : (
+  <button className="logout-btn" onClick={handleLogout}>
+    <Logout /> Logout
+  </button>
+)}
 
-      <button className="logout-btn" onClick={handleLogout}>
-        <Logout /> Logout
-      </button>
     </aside>
   );
 };

@@ -126,10 +126,27 @@
   margin-bottom: 16px;
 
 }
+.login-btn {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  margin-bottom: 22px;
+
+}
 
 .logout-btn:hover {
   background-color: #6c030d;
 }
+
 
 @media (max-width: 768px) {
   .sidebar {
