@@ -144,7 +144,7 @@ const Sidebar = () => {
     navigate(`/login?redirectTo=${currentPath}`);
   }}
 >
-  Login
+  Login / signup
 </button>
 ) : (
   <button className="logout-btn" onClick={handleLogout}>

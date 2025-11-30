@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #ddd;
-    padding: 0.8rem;
   position: fixed;
     z-index: 1000;
       background: #141414;
@@ -25,12 +24,16 @@
   width: 36px;
   height: 36px;
   margin-right: 10px;
+  align-items: center;
+
+
 }
-.logo-text {
+.top-logo-text {
   font-size: 1.6rem;
   font-weight: bold;
   color: #1976d2;
-  margin-top: 0;
+  align-items: center;
+
 }
 .topbar-right{
   text-align: center;
@@ -61,7 +64,7 @@
   border-radius: 4px;
   cursor: pointer;
   margin-left: 10px;
-  margin-right: 25px;
+  margin-right: 12px;
 }
 
 @media (max-width: 768px) {

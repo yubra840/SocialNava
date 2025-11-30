@@ -64,7 +64,7 @@ const Topbar = () => {
           onClick={() => (window.location.href = `/`)}
         />
         <h2
-          className="logo-text"
+          className="top-logo-text"
           onClick={() => (window.location.href = `/`)}
         >
           SocialNava
@@ -78,7 +78,7 @@ const Topbar = () => {
     navigate(`/login?redirectTo=${currentPath}`);
   }}
 >
-  Login
+  Login / signup
 </button>
       ) : (
         <div className="topbar-right">
